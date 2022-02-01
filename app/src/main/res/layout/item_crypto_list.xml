@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data> 
+        <variable
+            name="crypto"
+            type="com.berkt.cryptocurrencyapp.model.Crypto" />
+    </data>
+
+<androidx.cardview.widget.CardView 
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -24,7 +31,7 @@
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:paddingBottom="5dp"
-            android:text="This is a currency" />
+            android:text="@{crypto.currency}" />
 
         <TextView
             android:id="@+id/tv_price"
@@ -34,8 +41,9 @@
             android:textColor="@android:color/darker_gray"
             android:paddingLeft="7dp"
             android:textSize="15sp"
-            android:text="0.19788058" />
+            android:text="@{crypto.price}" />
 
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
+</layout>

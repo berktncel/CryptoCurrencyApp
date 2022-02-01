@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.berkt.cryptocurrencyapp.adapter.CryptoAdapter
 import com.berkt.cryptocurrencyapp.databinding.ActivityMainBinding
-import com.berkt.cryptocurrencyapp.model.CryptoData
+import com.berkt.cryptocurrencyapp.model.Crypto
 import com.berkt.cryptocurrencyapp.viewmodel.CryptoViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -36,9 +36,9 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun initAdapter(data: List<CryptoData>?) {
+    private fun initAdapter(data: List<Crypto>?) {
         binding.rvCryptoList.layoutManager = LinearLayoutManager(this)
-        val adapter = data?.let { CryptoAdapter(it, applicationContext) }
+        val adapter = data?.let { CryptoAdapter(it, this@MainActivity) }
         binding.rvCryptoList.adapter = adapter
     }
 }

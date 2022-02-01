@@ -31,7 +31,9 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
+
 }
 
 def retrofitVersion = '2.9.0'

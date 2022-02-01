@@ -1,6 +1,6 @@
 package com.berkt.cryptocurrencyapp.model
 
-data class CryptoData(
+data class Crypto(
     val currency: String,
     val price: String
 )
